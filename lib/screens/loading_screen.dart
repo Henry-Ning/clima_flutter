@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:clima/services/location.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -10,8 +9,8 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   void getLocation() async {
     Location location = Location();
-    location.getCurrentLocation();
-    print('Longitude is: $location.longitude');
+    await location.getCurrentLocation();
+    print('Longitude is: ${location.longitude}');
     print(location.latitude);
   }
 
